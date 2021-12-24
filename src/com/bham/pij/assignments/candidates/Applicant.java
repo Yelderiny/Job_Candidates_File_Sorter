@@ -31,10 +31,7 @@ public class Applicant
         String appInfo = name + "," + qualification + ",";
 
         //concatenate all available positions and experience years
-        for (int x = 0; x < positions.toArray().length; x++)
-        {
-            appInfo = appInfo.concat(positions.get(x) + "," + yearsOfExperience.get(x) + ",");
-        }
+        for (int x = 0; x < positions.toArray().length; x++) appInfo = appInfo.concat(positions.get(x) + "," + yearsOfExperience.get(x) + ",");
         appInfo = appInfo.concat(eMail);
 
         return appInfo;

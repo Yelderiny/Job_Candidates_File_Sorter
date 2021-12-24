@@ -38,36 +38,15 @@ public class CleaningUp
 
                         switch (elements[REQUESTED_DATA])
                         {
-                            case "Surname":
-                            case "surname":
-                                candidate.setName(elements[WRITTEN_DATA] + "000" + counter++);
-                                break;
-
-                            case "Qualification":
-                            case "qualification":
-                                candidate.setQualification(elements[WRITTEN_DATA]);
-                                break;
-
-                            case "Position":
-                            case "position":
-                                candidate.addPosition(elements[WRITTEN_DATA]);
-                                break;
-
-                            case "Experience":
-                            case "experience":
-                                candidate.addYearsOfExperience(Integer.parseInt(elements[WRITTEN_DATA]));
-                                break;
-
-                            case "eMail":
-                            case "email":
-                                candidate.seteMail(elements[WRITTEN_DATA]);
-                                break;
-
+                            case "Surname", "surname" -> candidate.setName(elements[WRITTEN_DATA] + "000" + counter++);
+                            case "Qualification", "qualification" -> candidate.setQualification(elements[WRITTEN_DATA]);
+                            case "Position", "position" -> candidate.addPosition(elements[WRITTEN_DATA]);
+                            case "Experience", "experience" -> candidate.addYearsOfExperience(Integer.parseInt(elements[WRITTEN_DATA]));
+                            case "eMail", "email" -> candidate.seteMail(elements[WRITTEN_DATA]);
                         }
-
                         line = reader.nextLine(); //move to the next line
                     }
-                    writer.println(candidate.toString() + ","); //write to new file
+                    writer.println(candidate + ","); //write to new file
                 }
             }
         } catch (IOException ioe) { ioe.printStackTrace(); }

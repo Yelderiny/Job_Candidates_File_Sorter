@@ -73,10 +73,7 @@ public class CandidatesToInterview
         if(candidate.getQualification().equals(keywordsDegree[0]) || candidate.getQualification().equals(keywordsDegree[1]))
         {
             //iterate through the keywordsExperience array
-            for (String experience : keywordsExperience)
-            {
-                if (candidate.getPositions().contains(experience)) return true; //the candidate has relevant experience and is qualified
-            }
+            for (String experience : keywordsExperience) if (candidate.getPositions().contains(experience)) return true; //the candidate has relevant experience and is qualified
         }
         return false;
     }
